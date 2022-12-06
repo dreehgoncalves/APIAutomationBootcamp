@@ -1,19 +1,99 @@
 {
+  "author": [
+    {
+      "id": 1,
+      "name": "arthur silva"
+    },
+    {
+      "id": 2,
+      "name": "leslie oliveira"
+    },
+    {
+      "id": 3,
+      "name": "rebeka gomez"
+    }
+  ],
   "posts": [
     {
       "id": 1,
       "title": "json-server",
-      "author": "typicode"
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "title": "json-server2",
+      "authorId": 2
+    },
+    {
+      "id": 3,
+      "title": "json-server3",
+      "authorId": 3
     }
   ],
   "comments": [
     {
       "id": 1,
       "body": "some comment",
+      "postId": 3
+    },
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 2
+    },
+    {
+      "id": 3,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 4,
+      "body": "some comment",
+      "postId": 3
+    },
+    {
+      "id": 5,
+      "body": "some comment",
+      "postId": 2
+    },
+    {
+      "id": 6,
+      "body": "some comment",
       "postId": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "admin": [
+    {
+      "id": 1,
+      "name": "typicode",
+      "postId": [1],
+      "password": "teste123"
+
+    },
+    {
+      "id": 2,
+      "name": "java",
+      "postId": [2],
+      "password": "teste123"
+    },
+    {
+      "id": 2,
+      "name": "python",
+      "postId": [3],
+      "password": "teste123"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "typicode",
+      "postId": [1, 3, 5]
+
+    },
+    {
+      "id": 2,
+      "name": "java",
+      "postId": [2, 4, 6]
+    }
+  ]
 }

@@ -87,8 +87,10 @@ public class BookingTests {
 
     //Cria uma nova reserva
     @Test
-    @Order(1)
+    @Order(12)
     public void createBooking_WithValidData_ReturnOk(){
+        bookingdates.setCheckin("");
+        bookingdates.setCheckout("");
         request
                 .when()
                 .body(booking)
@@ -96,6 +98,21 @@ public class BookingTests {
                 .then()
                 .body(matchesJsonSchemaInClasspath("creatingBookingRequestSchema.json"))
                 .and()
+                .assertThat()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .and()
+                .time(lessThan(2000L));
+    }
+
+    @Test
+    @Order(1)
+    public void createBooking_WithInvalidData_Return400(){
+        request
+                .when()
+                .body(booking)
+                .post("/booking")
+                .then()
                 .assertThat()
                 .statusCode(200)
                 .contentType(ContentType.JSON)

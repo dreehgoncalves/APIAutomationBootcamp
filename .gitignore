@@ -10,7 +10,6 @@
 hs_err_pid*
 allure-results/
 /.idea
-/.idea
 
 ##############################
 ## Maven
